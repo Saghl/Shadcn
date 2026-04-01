@@ -46,10 +46,10 @@ export default function Home() {
         <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
         <p className="text-3xl font-bold tracking-tight">1.00 EUR</p>
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Send
+          <Button size="sm" variant="default">
+            Send money
           </Button>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button size="sm" variant="default">
             Add money
           </Button>
           <DropdownMenu>
