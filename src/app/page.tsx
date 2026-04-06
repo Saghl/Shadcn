@@ -41,20 +41,23 @@ const RECENT_TRANSACTIONS = [
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col gap-8 p-6">
+      <div className="mx-auto w-full max-w-[976px] space-y-4">
       {/* Total balance + actions */}
       <section className="space-y-4">
-        <h2 className="text-sm font-medium text-muted-foreground">Total balance</h2>
-        <p className="text-3xl font-bold tracking-tight">1.00 EUR</p>
+        <div className="space-y-0">
+        <p className="text-sm font-medium text-muted-foreground">Total balance</p>
+        <h2 className="text-3xl font-bold tracking-tight">1.00 EUR</h2>
+        </div>
         <div className="flex flex-wrap gap-2">
           <Button size="sm" variant="default">
             Send money
           </Button>
-          <Button size="sm" variant="default">
+          <Button size="sm" variant="secondary">
             Add money
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button size="sm" variant="outline" className="gap-1">
+              <Button size="sm" variant="secondary" className="gap-1">
                 Request
                 <ChevronDown className="size-4" />
               </Button>
@@ -121,6 +124,7 @@ export default function Home() {
           Provided by Wise Assets Europe
         </p>
       </footer>
+      </div>
     </div>
   )
 }
