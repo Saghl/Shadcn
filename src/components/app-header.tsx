@@ -20,45 +20,47 @@ import { ChevronRight } from "lucide-react"
  */
 export function AppHeader() {
   return (
-    <header className="flex h-14 shrink-0 items-center gap-4 border-b border-border bg-background px-4">
-      <SidebarTrigger className="-ml-1" />
-      {/* DESIGNER: Replace with your logo asset or SVG; Wise uses green "WISE" wordmark */}
-      <div className="flex items-center gap-2">
-        <span className="text-xl font-bold text-primary">WISE</span>
-      </div>
-      <div className="flex flex-1" />
-      <div className="flex items-center gap-2">
-        <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-          Earn €90
-        </Button>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="flex items-center gap-2">
-              <Avatar className="size-8">
-                <AvatarImage src="" alt="Carolina Fernandes" />
-                <AvatarFallback className="bg-muted text-muted-foreground text-xs">
-                  CF
-                </AvatarFallback>
-              </Avatar>
-              <span className="hidden text-sm font-medium sm:inline-block">
-                Carolina Fernandes
-              </span>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-56">
-            <DropdownMenuLabel>
-              <span className="font-normal">Account</span>
-            </DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-destructive">
-              Log out
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <header className="flex h-14 shrink-0 items-center border-b border-border bg-background px-4">
+      <div className="mx-auto flex w-full max-w-[976px] items-center gap-4">
+        <SidebarTrigger className="-ml-1" />
+        {/* DESIGNER: Replace with your logo asset or SVG; Wise uses green "WISE" wordmark */}
+        <div className="flex items-center gap-2">
+          <span className="text-xl font-bold text-primary">WISE</span>
+        </div>
+        <div className="flex flex-1" />
+        <div className="flex items-center gap-2">
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            Earn €90
+          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="flex items-center gap-2">
+                <Avatar className="size-8">
+                  <AvatarImage src="" alt="Carolina Fernandes" />
+                  <AvatarFallback className="bg-muted text-muted-foreground text-xs">
+                    CF
+                  </AvatarFallback>
+                </Avatar>
+                <span className="hidden text-sm font-medium sm:inline-block">
+                  Carolina Fernandes
+                </span>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>
+                <span className="font-normal">Account</span>
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem className="text-destructive">
+                Log out
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   )
