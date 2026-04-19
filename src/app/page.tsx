@@ -1,4 +1,6 @@
 import Link from "next/link"
+import Image from "next/image"
+import { DragScroll } from "@/components/ui/drag-scroll"
 import {
   Card,
   CardContent,
@@ -26,10 +28,10 @@ import { ArrowUpCircle, PlusCircle, ChevronDown } from "lucide-react"
  */
 
 const CURRENCY_ACCOUNTS = [
-  { code: "EUR", label: "EUR", accountId: "51568", balance: "1.00", flag: "🇪🇺" },
-  { code: "AUD", label: "AUD", accountId: "30779", balance: "0.00", flag: "🇦🇺" },
-  { code: "CAD", label: "CAD", accountId: "15376", balance: "0.00", flag: "🇨🇦" },
-  { code: "GBP", label: "GBP", accountId: "13159", balance: "0.00", flag: "🇬🇧" },
+  { code: "EUR", label: "EUR", accountId: "51568", balance: "1.00", flag: "/assets/flags/eu.svg" },
+  { code: "AUD", label: "AUD", accountId: "30779", balance: "0.00", flag: "/assets/flags/au.svg" },
+  { code: "CAD", label: "CAD", accountId: "15376", balance: "0.00", flag: "/assets/flags/ca.svg" },
+  { code: "GBP", label: "GBP", accountId: "13159", balance: "0.00", flag: "/assets/flags/gb.svg" },
 ]
 
 const RECENT_TRANSACTIONS = [
@@ -40,7 +42,7 @@ const RECENT_TRANSACTIONS = [
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col gap-8 p-6">
+    <div className="flex flex-1 flex-col gap-8 p-6 pt-14">
       <div className="mx-auto w-full max-w-[976px] space-y-4">
       {/* Total balance + actions */}
       <section className="space-y-4">
@@ -71,11 +73,11 @@ export default function Home() {
       </section>
 
       {/* Currency account cards */}
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <DragScroll>
         {CURRENCY_ACCOUNTS.map((account) => (
-          <Card key={account.code} className="bg-muted/50">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <span className="text-lg" aria-hidden>{account.flag}</span>
+          <Card key={account.code} className="bg-muted/50 w-[256px] h-[206px] shrink-0 bg-card justify-between">
+            <CardHeader className="flex flex-row items-center justify-start space-y-0 pb-2">
+              <Image src={account.flag} alt={account.label} width={48} height={48} className="size-12 rounded-full object-cover shrink-0" />
               <CardTitle className="text-base font-medium">{account.label}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-1">
@@ -84,10 +86,10 @@ export default function Home() {
             </CardContent>
           </Card>
         ))}
-      </section>
+      </DragScroll>
 
       {/* Recent transactions */}
-      <section className="space-y-4">
+      <section className="space-y-4 mt-14">
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold">Transactions</h2>
           <Link
@@ -97,7 +99,7 @@ export default function Home() {
             See all
           </Link>
         </div>
-        <ul className="divide-y divide-border rounded-lg border bg-card">
+        <ul className="rounded-lg">
           {RECENT_TRANSACTIONS.map((tx) => (
             <li key={tx.id} className="flex items-center gap-4 px-4 py-3">
               <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-muted">

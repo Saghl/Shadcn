@@ -110,7 +110,7 @@
   --radius: 0.625rem;
   --background: var(--gray-100);
   --foreground: var(--gray-600);
-  --card: var(--gray-100);
+  --card: var(--gray-200);
   --card-foreground: var(--gray-600);
   --popover: var(--gray-100);
   --popover-foreground: var(--gray-600);

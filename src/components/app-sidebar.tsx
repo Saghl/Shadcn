@@ -26,7 +26,7 @@ import {
  */
 export function AppSidebar() {
   return (
-    <Sidebar className="border-r border-sidebar-border">
+    <Sidebar className="border-none">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>

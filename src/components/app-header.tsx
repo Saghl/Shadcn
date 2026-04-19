@@ -20,7 +20,7 @@ import { ChevronRight } from "lucide-react"
  */
 export function AppHeader() {
   return (
-    <header className="flex h-14 shrink-0 items-center border-b border-border bg-background px-4">
+    <header className="flex h-14 shrink-0 items-center bg-background px-4 mt-16">
       <div className="mx-auto flex w-full max-w-[976px] items-center gap-4">
         <SidebarTrigger className="-ml-1" />
         {/* DESIGNER: Replace with your logo asset or SVG; Wise uses green "WISE" wordmark */}
